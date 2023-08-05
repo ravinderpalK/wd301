@@ -14,11 +14,12 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
   addTask: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     const newTask = {
-      title: this.state.title,
+      title: this.state.title.trim(),
       description: this.state.description,
       date: this.state.date,
     };
-    this.props.addTask(newTask);
+    if (newTask.title && newTask.date)
+      this.props.addTask(newTask);
     this.setState({ title: "", description: "", date: "" });
   };
   titleChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -53,14 +54,14 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
             </tr>
             <tr>
               <td><label htmlFor="todoDescription">Description: </label></td>
-              <td><textarea required className="border rounded-sm" id="todoDescription" value={this.state.description} onChange={this.descriptionChanged}></textarea></td>
+              <td><textarea className="border rounded-sm" id="todoDescription" value={this.state.description} onChange={this.descriptionChanged}></textarea></td>
             </tr>
             <tr>
               <td><label htmlFor="todoDueDate">Date: </label></td>
               <td><input required className="border rounded-sm" type="date" id="todoDueDate" value={this.state.date} onChange={this.dateChanged} /></td>
             </tr>
             <tr>
-              <td><button className="border rounded-md bg-gray-500 text-white px-1" type="submit">Add item </button></td>
+              <td><button className="border rounded-md bg-gray-500 text-white px-1" type="submit" id="addTaskButton">Add item </button></td>
             </tr>
           </tbody>
         </table>
