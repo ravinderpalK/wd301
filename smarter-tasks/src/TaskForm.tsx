@@ -49,15 +49,15 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
           <tbody>
             <tr>
               <td><label htmlFor="todoTitle">Title: </label></td>
-              <td><input className="border rounded-sm" id="todoTitle" type="text" value={this.state.title} onChange={this.titleChanged} /></td>
+              <td><input required className="border rounded-sm" id="todoTitle" type="text" value={this.state.title} onChange={this.titleChanged} /></td>
             </tr>
             <tr>
               <td><label htmlFor="todoDescription">Description: </label></td>
-              <td><textarea className="border rounded-sm" id="todoDescription" value={this.state.description} onChange={this.descriptionChanged}></textarea></td>
+              <td><textarea required className="border rounded-sm" id="todoDescription" value={this.state.description} onChange={this.descriptionChanged}></textarea></td>
             </tr>
             <tr>
               <td><label htmlFor="todoDueDate">Date: </label></td>
-              <td><input className="border rounded-sm" type="date" id="todoDueDate" value={this.state.date} onChange={this.dateChanged} /></td>
+              <td><input required className="border rounded-sm" type="date" id="todoDueDate" value={this.state.date} onChange={this.dateChanged} /></td>
             </tr>
             <tr>
               <td><button className="border rounded-md bg-gray-500 text-white px-1" type="submit">Add item </button></td>
