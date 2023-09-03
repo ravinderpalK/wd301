@@ -1,6 +1,5 @@
 import TaskCard from "./TaskCard";
 
-
 function TaskApp() {
   return (
     <div className="container py-10 max-w-4xl mx-auto">

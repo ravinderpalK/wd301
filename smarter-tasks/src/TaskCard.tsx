@@ -1,38 +1,33 @@
-import React from "react";
+// import React, { useEffect } from "react";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 import { TaskItem } from "./types";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
-interface TaskCardProp { }
-interface TaskCardState {
+export interface TaskCardState {
   tasks: TaskItem[];
 }
-class TaskCard extends React.Component<TaskCardProp, TaskCardState> {
-  addTask = (task: TaskItem) => {
-    this.setState((state) => {
-      return {
-        tasks: [...state.tasks, task],
-      };
-    });
-  };
-  constructor(props: TaskCardProp) {
-    super(props);
-    this.state = {
-      tasks: [],
-    };
-  }
 
-  render() {
-    return (
-      <div className="border border-slate-200 rounded-xl p-4">
-        <h1 className="text-slate-500 text-xl font-bold text-center mb-2">
-          Pending
-        </h1>
-        <TaskForm addTask={this.addTask} />
-        <TaskList tasks={this.state.tasks} />
-      </div>
-    );
+const TaskCard = () => {
+  const [taskCardState, setTaskcardState] = useLocalStorage<TaskCardState>("tasks", {
+    tasks: [],
+  });
+  const addTask = (task: TaskItem) => {
+    setTaskcardState({ tasks: [...taskCardState.tasks, task] });
+  };
+  const deleteTask = (id: number) => {
+    taskCardState.tasks.splice(id, 1);
+    setTaskcardState({ tasks: [...taskCardState.tasks] });
   }
+  return (
+    <div className="border border-slate-200 rounded-xl p-4">
+      <h1 className="text-slate-500 text-xl font-bold text-center mb-2">
+        Pending
+      </h1>
+      <TaskForm addTask={addTask} />
+      <TaskList deleteTask={deleteTask} tasks={taskCardState.tasks} />
+    </div>
+  );
 }
 
 export default TaskCard;
