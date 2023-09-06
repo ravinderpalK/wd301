@@ -9,7 +9,7 @@ import Layout from "./Layout";
 import TaskDetailsPage from "./pages/TaskDetailsPage";
 import Signin from "./pages/Signin";
 import ProtectedRoute from "./ProtectedRoute";
-import NotFound from "./NotFound";
+import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter([
   {
