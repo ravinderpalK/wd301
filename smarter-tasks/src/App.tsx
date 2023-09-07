@@ -22,7 +22,10 @@ const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element: <NotFound />
+    element: (
+      <ProtectedRoute>
+        <NotFound />
+      </ProtectedRoute>)
   },
   {
     element: (
