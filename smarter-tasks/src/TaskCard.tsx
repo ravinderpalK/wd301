@@ -15,8 +15,8 @@ const TaskCard = () => {
   const addTask = (task: TaskItem) => {
     setTaskcardState({ tasks: [...taskCardState.tasks, task] });
   };
-  const deleteTask = (id: number) => {
-    taskCardState.tasks.splice(id, 1);
+  const deleteTask = (task: TaskItem) => {
+    taskCardState.tasks.splice(Number(task.id), 1);
     setTaskcardState({ tasks: [...taskCardState.tasks] });
   }
   return (

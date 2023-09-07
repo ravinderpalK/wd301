@@ -19,7 +19,6 @@ const TaskDetailsPage: React.FC = () => {
       tasks: [],
     }
   );
-
   const task = taskAppState.tasks.find(task => task.id === id);
 
   return (
