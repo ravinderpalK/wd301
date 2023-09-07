@@ -22,10 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element: (
-      <ProtectedRoute>
-        <NotFound />
-      </ProtectedRoute>)
+    element: <Navigate to="/notfound" replace />
   },
   {
     element: (
@@ -45,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "tasks/:id",
         element: (<TaskDetailsPage />)
+      },
+      {
+        path: "/notfound",
+        element: (<NotFound />)
       },
     ]
   }
