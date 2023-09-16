@@ -1,59 +1,50 @@
 import {
   createBrowserRouter,
-  Navigate,
   RouterProvider,
 } from "react-router-dom";
-import HomePage from './pages/HomePage';
-import TaskListPage from './pages/TaskListPage';
-import Layout from "./Layout";
-import TaskDetailsPage from "./pages/TaskDetailsPage";
-import Signin from "./pages/Signin";
-import ProtectedRoute from "./ProtectedRoute";
+
 import NotFound from "./pages/Notfound";
+import Signup from "./pages/signup";
+import Signin from "./pages/signin";
+import Dashboard from "./pages/dashboard";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/signin" replace />,
+    element: <Signup />,
   },
   {
-    path: "/signin",
-    element: <Signin />
+    path: "/signup",
+    element: <Signup />
   },
   {
-    path: "/*",
-    element: <Navigate to="/notfound" replace />
+    path: "/signin", // then we've added the signin route
+    element: <Signin />,
   },
   {
+    path: "/dashboard",
     element: (
       <ProtectedRoute>
-        <Layout />
+        <Dashboard />
       </ProtectedRoute>
     ),
-    children: [
-      {
-        path: "home",
-        element: (<HomePage />)
-      },
-      {
-        path: "tasks",
-        element: (<TaskListPage />)
-      },
-      {
-        path: "tasks/:id",
-        element: (<TaskDetailsPage />)
-      },
-      {
-        path: "/notfound",
-        element: (<NotFound />)
-      },
-    ]
-  }
+  },
+  {
+    path: "/notfound",
+    element: <NotFound />
+  },
+  {
+    path: "*",
+    element: <NotFound />
+  },
 ]);
 
 const App = () => {
   return (
-    <RouterProvider router={router} />
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
 
