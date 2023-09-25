@@ -29,7 +29,11 @@ const router = createBrowserRouter([
     element: <NotFound />
   },
   {
-    path: "account",
+    path: "*",
+    element: <NotFound />
+  },
+  {
+    path: "/account",
     element: (
       <ProtectedRoute>
         <AccountLayout />
@@ -50,10 +54,6 @@ const router = createBrowserRouter([
         )
       },
     ],
-  },
-  {
-    path: "*",
-    element: <NotFound />
   },
 ]);
 export default router;
