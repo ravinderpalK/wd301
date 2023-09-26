@@ -32,7 +32,8 @@ const NewMember = () => {
   return (
     <>
       <button
-        className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+        className="new-member-btn rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+        id="new-member-btn"
         onClick={openModel}
       >
         Add User
@@ -72,16 +73,16 @@ const NewMember = () => {
                       {error &&
                         <span>{error}</span>
                       }
-                      <input type="text" placeholder="Enter name" className={`border w-full py-2 px-3 my-3 ${errors.name ? 'border-red-500' : ''}`}
+                      <input type="text" placeholder="Enter name" id="name" className={`border w-full py-2 px-3 my-3 ${errors.name ? 'border-red-500' : ''}`}
                         autoFocus
                         {...register('name', { required: true })} />
-                      <input type="email" placeholder="Enter email" className={`border w-full py-2 px-3 my-3 ${errors.email ? 'border-red-500' : ''}`}
+                      <input type="email" placeholder="Enter email" id="email" className={`border w-full py-2 px-3 my-3 ${errors.email ? 'border-red-500' : ''}`}
                         autoFocus
                         {...register('email', { required: true })} />
-                      <input type="password" placeholder="Enter password" className={` border w-full py-2 px-3 my-3 ${errors.password ? 'border-red-500' : ''}`}
+                      <input type="password" placeholder="Enter password" id="password" className={` border w-full py-2 px-3 my-3 ${errors.password ? 'border-red-500' : ''}`}
                         autoFocus
                         {...register('password', { required: true })} />
-                      <button type="submit" className="justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 mr-2 text-sm font-medium text-white hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
+                      <button type="submit" id="create-member-btn " className="justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 mr-2 text-sm font-medium text-white hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
                         Submit
                       </button>
                     </form>

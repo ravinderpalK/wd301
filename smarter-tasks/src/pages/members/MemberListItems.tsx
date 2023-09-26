@@ -22,7 +22,7 @@ const MembersListitems = () => {
   return (
     <>
       {members.map((member: Member) => (
-        <div key={member.id} className="flex p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+        <div key={member.id} className="member flex p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           <div className="">
             <h5 className="text-lg font-medium tracking-tight text-gray-900 dark:text-white">Name: {member.name}</h5>
             <h5 className="text-lg font-medium tracking-tight text-gray-900 dark:text-white">Email: {member.email}</h5>
