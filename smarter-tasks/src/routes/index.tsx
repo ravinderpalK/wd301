@@ -3,12 +3,12 @@ import { Navigate, createBrowserRouter } from "react-router-dom";
 import Signin from "../pages/signin"
 import Signup from "../pages/signup"
 import AccountLayout from "../layouts/account";
-import ProtectedRoute from "../ProtectedRoute";
 import Projects from "../pages/projects";
 import Members from "../pages/members";
 import Logout from "../pages/logout";
 import { MembersProvider } from "../context/members/context";
-import { NotFound } from "../pages/NotFound";
+import { NotFound } from "../pages/Notfound";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 const router = createBrowserRouter([
   { path: "/", element: <Navigate to="/account/projects" replace /> },
@@ -35,9 +35,9 @@ const router = createBrowserRouter([
   {
     path: "/account",
     element: (
-      <ProtectedRoute>
+      <ProtectedRoutes>
         <AccountLayout />
-      </ProtectedRoute>
+      </ProtectedRoutes>
     ),
     children: [
       { index: true, element: <Navigate to="/account/projects" replace /> },

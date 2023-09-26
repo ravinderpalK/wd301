@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { deleteMember, fetchMembers } from "../../context/members/action";
+import { deleteMember, fetchMembers } from "../../context/members/actions";
 import { useMemberDispatch, useMemberState } from "../../context/members/context";
 import { Member } from "../../context/members/reducer";
 

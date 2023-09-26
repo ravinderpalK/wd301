@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Dialog, Transition } from '@headlessui/react'
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useMemberDispatch } from "../../context/members/context";
-import { addMembers } from "../../context/members/action";
+import { addMembers } from "../../context/members/actions";
 
 export type Inputs = {
   name: string;
