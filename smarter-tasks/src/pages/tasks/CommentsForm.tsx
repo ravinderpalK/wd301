@@ -2,7 +2,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Comments } from "./Comments";
 import { useParams } from 'react-router-dom';
-import { addComments } from '../../context/comment/action';
+import { addComments } from '../../context/comment/actions';
 import { useCommentDispatch } from '../../context/comment/context';
 
 type Inputs = {

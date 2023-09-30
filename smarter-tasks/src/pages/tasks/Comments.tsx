@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useCommentDispatch, useCommentState } from "../../context/comment/context"
-import { fetchComment } from "../../context/comment/action";
+import { fetchComment } from "../../context/comment/actions";
 import { useParams } from "react-router-dom";
 import { useMemberState } from "../../context/members/context";
 
