@@ -28,16 +28,15 @@ export const Comments: React.FC = () => {
         return (
           <div
             key={comment.id}
-            id="comment"
-            className="comment"
+            className="comment border-2 rounded"
           >
             <div
-              className="flex text-gray-800"
+              className="flex text-gray-800 "
             >
               <div className="mr-3">{comment.description}</div>
               <div className="mr-3">{getDate(comment.createdAt)}</div>
-              <div className="mr-3">{getuser(comment.owner)}</div>
             </div>
+            <div className="mr-3">{getuser(comment.owner)}</div>
           </div>
         )
       })}
