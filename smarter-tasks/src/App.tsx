@@ -4,13 +4,19 @@ import { ThemeContext } from "./context/theme";
 
 import router from "./routes"
 import { ProjectsProvider } from "./context/projects/context";
+import { MembersProvider } from "./context/members/context";
+import { CommentProvider } from "./context/comment/context";
 
 const App = () => {
   const currentTheme = useContext(ThemeContext)
   return (
     <div className={`h-screen w-full mx-auto py-2 ${currentTheme.theme === "dark" ? "dark" : ""}`}>
       <ProjectsProvider>
-        <RouterProvider router={router} />
+        <MembersProvider>
+          <CommentProvider>
+            <RouterProvider router={router} />
+          </CommentProvider>
+        </MembersProvider>
       </ProjectsProvider>
     </div>
   );

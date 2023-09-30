@@ -33,7 +33,6 @@ export const addMembers = async (dispatch: any, args: Inputs) => {
     if (data.errors && data.errors.length > 0) {
       return { ok: false, error: data.errors[0].message }
     }
-    console.log(data.user);
     dispatch({ type: 'ADD_MEMBERS_SUCCESS', payload: data.user });
     return { ok: true }
   }
