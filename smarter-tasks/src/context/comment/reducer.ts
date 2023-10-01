@@ -37,7 +37,7 @@ export const commentReducer: Reducer<CommentState, CommentAction> = (state = ini
       return {
         ...state,
         isLoading: false,
-        comments: [...state.comments, action.payload]
+        comments: [action.payload, ...state.comments]
       };
     case CommentAvailableAction.ADD_COMMENT_FAILURE:
       return {
