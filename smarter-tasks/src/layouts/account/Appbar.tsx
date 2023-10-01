@@ -43,7 +43,7 @@ const Appbar = () => {
               <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <img
-                    className="h-8"
+                    className="h-8 w-50"
                     src={Logo}
                     alt="Smarter Tasks"
                   />
@@ -76,6 +76,7 @@ const Appbar = () => {
                 <div className="ml-4 flex items-center md:ml-6">
                   <Switch
                     checked={enabled}
+                    aria-label="toggleTheme"
                     onChange={toggleTheme}
                     className={`${enabled ? 'bg-slate-400' : 'bg-slate-700'}
               relative inline-flex h-[24px] w-[100px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
@@ -88,7 +89,7 @@ const Appbar = () => {
                   </Switch>
                   <Menu as="div" className="relative ml-3">
                     <div>
-                      <Menu.Button className="rounded-full bg-white p-1 text-gray-400 hover:text-blue-600">
+                      <Menu.Button aria-label="profile" className="rounded-full bg-white p-1 text-gray-400 hover:text-blue-600">
                         <UserCircleIcon className="h-6 w-6" aria-hidden="true" />
                       </Menu.Button>
                     </div>
