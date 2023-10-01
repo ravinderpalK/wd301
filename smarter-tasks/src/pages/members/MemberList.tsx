@@ -6,7 +6,6 @@ import { fetchMembers } from "../../context/members/actions";
 const MembersList: React.FC = () => {
 
   const dispatchMember = useMemberDispatch();
-  console.log(dispatchMember);
   useEffect(() => {
     fetchMembers(dispatchMember);
   }, [dispatchMember])
