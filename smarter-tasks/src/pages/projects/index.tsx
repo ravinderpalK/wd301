@@ -1,13 +1,12 @@
-
 import React, { Suspense } from "react";
+import NewProject from "./NewProject";
 import ErrorBoundary from "../../components/ErrorBoundary";
 const ProjectList = React.lazy(() => import("./ProjectList"));
-import NewProject from "./NewProject";
 const Projects = () => {
   return (
     <>
       <div className="flex justify-between">
-        <h2 className="text-2xl font-medium tracking-tight">Projects</h2>
+        <h2 className="text-2xl font-medium trcaking-tight">Projects</h2>
         <NewProject />
       </div>
       <ErrorBoundary>
@@ -16,6 +15,6 @@ const Projects = () => {
         </Suspense>
       </ErrorBoundary>
     </>
-  )
-}
+  );
+};
 export default Projects;
