@@ -17,6 +17,7 @@ export default function ProjectListItems() {
     return <span>{errorMessage}</span>;
   }
 
+
   return (
     <>
       {projects.map((project: any) => (
