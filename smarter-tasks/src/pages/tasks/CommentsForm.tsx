@@ -9,7 +9,7 @@ type Inputs = {
   description: string;
 }
 
-export const CommentsForm = (props: any) => {
+export const CommentsForm = () => {
   const { register, handleSubmit, formState: { errors }, } = useForm<Inputs>();
   const { projectID, taskID } = useParams();
   const commentDispatch = useCommentDispatch();
@@ -18,7 +18,6 @@ export const CommentsForm = (props: any) => {
       description: data.description,
     }
     await addComments(commentDispatch, projectID ?? "", taskID ?? "", comment);
-    props.closeModal();
   }
   return (
     <>

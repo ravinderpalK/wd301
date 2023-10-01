@@ -193,7 +193,7 @@ const TaskDetails = () => {
                     </form>
                   </div>
                   <div className="">
-                    <CommentsForm closeModal={closeModal} />
+                    <CommentsForm />
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
